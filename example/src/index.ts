@@ -9,13 +9,13 @@ async function bootstrap() {
   // await initDb();
   const app = express();
   AdminJS.registerAdapter(Adapter);
-
+  // the initDb files is not called
   const database = await Adapter.init('mysql2', {
     host: 'localhost',
     port: 3306,
     user: 'root',
     password: 'password',
-    database: 'Test'
+    database: 'wdmdb'
   });
 
   const adminJs = new AdminJS({
